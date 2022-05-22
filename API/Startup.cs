@@ -1,4 +1,5 @@
 using API.Extensions;
+using API.Middleware;
 
 namespace API
 {
@@ -20,12 +21,8 @@ namespace API
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            
+            app.UseMiddleware<ExceptionMiddleware>();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
