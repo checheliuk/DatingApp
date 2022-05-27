@@ -20,6 +20,7 @@
 
         <ng-container *ngIf="(accountService.currentUser$ | async) as user">
             <div class="dropdown" dropdown>
+                <img src="{{user.photoUrl}}" alt="{{user.username}}">
                 <button class="btn dropdown-toggle text-light" dropdownToggle>Welcome {{user.username | titlecase}}</button>
                 <div class="dropdown-menu mt-3" *dropdownMenu>
                     <a routerLink="/member/edit" class="dropdown-item">Edit Profile</a>
