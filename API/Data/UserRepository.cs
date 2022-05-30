@@ -26,7 +26,7 @@ namespace API.Data
                 .SingleOrDefaultAsync();
         }
 
-        public async Task<PagerList<MemberDto>> GetMembersAsync(UserParams userParams)
+        public async Task<PagedList<MemberDto>> GetMembersAsync(UserParams userParams)
         {
             var quert = _context.Users.AsQueryable();
                 
@@ -43,7 +43,7 @@ namespace API.Data
                 _ => quert.OrderByDescending(u => u.LastActive)
             };
 
-            return await PagerList<MemberDto>.CreateAsync(quert.ProjectTo<MemberDto>(_mapper.ConfigurationProvider).AsNoTracking(), userParams.PageNumber, userParams.PageSize);
+            return await PagedList<MemberDto>.CreateAsync(quert.ProjectTo<MemberDto>(_mapper.ConfigurationProvider).AsNoTracking(), userParams.PageNumber, userParams.PageSize);
         }
 
         public async Task<AppUser> GetUserByIfAsync(int id)
