@@ -1,0 +1,15 @@
+.img-circle {
+    max-height: 50px;
+}
+
+.btn-primary-delete {
+    color: #fff;
+    background-color: #e95420;
+    border-color: #e95420;
+}
+
+.btn-primary-delete:hover {
+    color: #fff;
+    background-color: #ba431a;
+    border-color: #af3f18;
+}
