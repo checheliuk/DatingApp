@@ -1,6 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 ssl
+obj
+bin
+publish
+wwwroot
+appsettings.json
+*.db
+*.rdb
 
 # Compiled output
 /dist
